@@ -72,8 +72,11 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     [ ((modm .|. shiftMask, xK_Return), spawn $ XMonad.terminal conf)
 
     -- launch rofi
-    , ((modm,               xK_space ), spawn "rofi -show run -terminal konsole") -- was dmenu_run
+    , ((modm,               xK_space ), spawn "rofi -show run -terminal alacritty") -- was dmenu_run
 
+    -- launch browser (qutebrowser)
+    , ((modm              , xK_b     ), spawn "qutebrowser")
+    
     -- launch gmrun
     , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
 

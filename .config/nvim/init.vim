@@ -2,6 +2,8 @@
 
 " line numbers (relative)
 set rnu
+" line number (current)
+set nu
 
 " line wrapping
 set wrap
