@@ -61,6 +61,13 @@ if [ ! -d "$DIRECTORY" ]; then
 fi
 cp ${HOME}/.config/rofi/config.rasi ${BASEDIR}/.config/rofi/config.rasi
 
+# nvim
+DIRECTORY=${BASEDIR}/.config/nvim/
+if [ ! -d "$DIRECTORY" ]; then
+  mkdir ${DIRECTORY}
+fi
+cp ${HOME}/.config/nvim/init.vim ${DIRECTORY}/init.vim
+
 # /etc/ files
 DIRECTORY=${BASEDIR}/etc/
 if [ ! -d "$DIRECTORY" ]; then
