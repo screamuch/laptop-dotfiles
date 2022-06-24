@@ -241,8 +241,8 @@ myManageHook = composeAll
     , className =? "toolbar"         --> doFloat
     , resource  =? "kdesktop"       --> doIgnore
     , title =? "qutebrowser"        --> doShift ( myWorkspaces !! 0)
-    , title =? "Discord"            --> doShift ( myWorkspaces !! 1)
-    , title =? "Telegram"           --> doShift ( myWorkspaces !! 1)
+    , title =? "Discord"            --> doShift ( myWorkspaces !! 1) >> doFloat
+    , title =? "Telegram"           --> doShift ( myWorkspaces !! 1) >> doFloat
     , title =? "Zoom"               --> doShift ( myWorkspaces !! 1)
     , title =? "Spotify"            --> doShift ( myWorkspaces !! 4)
     ]
