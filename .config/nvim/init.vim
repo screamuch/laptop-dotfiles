@@ -24,6 +24,9 @@ noremap <C-K> <C-W>k
 noremap <C-H> <C-W>h
 noremap <C-L> <C-W>l
 
+" for the colorizer
+set termguicolors
+
 " vimplug config (specify directory?)
 call plug#begin()
   " The default plugin directory will be as follows:
@@ -57,6 +60,17 @@ call plug#begin()
   " comment shortcuts
   Plug 'preservim/nerdcommenter' 
 
+  " Show hex colors
+  Plug 'norcalli/nvim-colorizer.lua'
+
+  " explains what key to press
+  Plug 'liuchengxu/vim-which-key'
+
   " Initialize plugin system
 call plug#end()
 
+" colorizer stuff
+lua require'colorizer'.setup()
+
+" whichkey shortcut
+nnoremap <silent> <leader> :WhichKey '<Space>'<CR>

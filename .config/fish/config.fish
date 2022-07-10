@@ -41,3 +41,39 @@ function fish_user_key_bindings
     bind '$' bind_dollar
 end
 
+# set default text editor to micro
+set -gx EDITOR micro
+
+# Aliases!
+
+# hoe
+alias bitch='sudo'
+
+# remove orphaned packages
+alias pacman-cleanup='sudo pacman -Qtdq | sudo pacman -Rns -'
+alias yay-cleanup='yay -Qtdq | yay -Rns -'
+
+# ls
+alias la='ls -lah --color=auto'
+alias ls='ls -lh --color=auto'
+
+# mkdir
+alias mkdir='mkdir -pv'
+
+# file moves
+alias mv='mv -i'
+alias cp='cp -i'
+alias rm='rm -i'
+
+# oh maaaan these hit the spot
+alias reboot='sudo reboot'
+alias pacman='sudo pacman'
+alias systemctl='sudo systemctl'
+
+# neovim
+alias v='nvim'
+alias vim='nvim'
+
+# if wget eats shit...
+alias wget='wget -c'
+

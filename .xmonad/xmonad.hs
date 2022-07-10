@@ -199,7 +199,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = spacing 12 $ avoidStruts (tiled ||| Mirror tiled ||| Full)
+myLayout = spacing 8 $ avoidStruts (tiled ||| Mirror tiled ||| Full)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -287,7 +287,7 @@ myStartupHook = do
     -- launch compositor (transparency, shadows, etc)
     spawnOnce "compton -f -r 12 &"
     -- enable natural scrolling on touchpad
-    spawnOnce "xinput set-prop 'Synaptics TM2668-001' 'libinput Natural Scrolling Enabled' 1 &"
+    spawnOnce "natural-scrolling &"
     -- launch trayer
     spawnOnce "trayer --edge top --align right --widthtype pixels --width 100 --height 24 --tint 0x00000000 --margin 415 --transparent true --alpha 0 &"
     -- launch clipboard manager
@@ -297,6 +297,12 @@ myStartupHook = do
     -- connect to wifi
     spawnOnce "iwctl station wlan0 connect \"21159Garden\" &"
     spawnOnce "iwctl station wlan0 connect \"Treat Yo Self 2011_EXT\" &"
+    -- launch apps
+    spawnOnce "telegram-desktop -startintray &"
+    spawnOnce "discord --start-minimized &"
+    spawnOnce "slack -u &"
+    -- faster browser launching
+    spawnOnce "qutebrowser --nowindow &"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.
