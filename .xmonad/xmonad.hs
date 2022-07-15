@@ -76,6 +76,9 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- launch browser (qutebrowser)
     , ((modm              , xK_b     ), spawn "qutebrowser")
+
+    -- launch file manager
+    , ((modm,               xK_v     ), spawn "pcmanfm")
     
     -- launch gmrun
     , ((modm .|. shiftMask, xK_p     ), spawn "gmrun")
@@ -133,6 +136,15 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
 
     -- Rotate keyboard layouts (this is now done using a setxkbmap at launch)
     -- , ((mod1Mask          , xK_space ), spawn "python ~/.xmonad/rotate_keyboard_layout.py")
+
+    -- Brightness control
+    , ((modm              , xK_F5     ), spawn "brightnessctl s 5%-")
+    , ((modm              , xK_F6     ), spawn "brightnessctl s 5%+")
+
+    -- volume control
+    , ((modm              , xK_F1     ), spawn "pulsemixer --toggle-mute && notify-send 'Mute' $(pulsemixer --get-mute)")
+    , ((modm              , xK_F2     ), spawn "pulsemixer --change-volume -10")
+    , ((modm              , xK_F3     ), spawn "pulsemixer --change-volume +10")
 
     -- Toggle the status bar gap
     -- Use this binding with avoidStruts from Hooks.ManageDocks.
@@ -244,10 +256,11 @@ myManageHook = composeAll
     , className =? "toolbar"         --> doFloat
     , resource  =? "kdesktop"       --> doIgnore
     , title =? "qutebrowser"        --> doShift ( myWorkspaces !! 0)
-    , title =? "Discord"            --> doShift ( myWorkspaces !! 1) >> doFloat
-    , title =? "Telegram"           --> doShift ( myWorkspaces !! 1) >> doFloat
+    , title =? "Discord"            --> doShift ( myWorkspaces !! 1) 
+    , title =? "Telegram"           --> doShift ( myWorkspaces !! 1) 
     , title =? "Zoom"               --> doShift ( myWorkspaces !! 1)
     , title =? "Spotify"            --> doShift ( myWorkspaces !! 4)
+    , className =? "fiji-Main"      --> doFloat
     ]
 
 ------------------------------------------------------------------------

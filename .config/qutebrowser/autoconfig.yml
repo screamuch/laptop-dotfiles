@@ -10,6 +10,9 @@ settings:
     https://www.ubereats.com: false
   content.notifications.enabled:
     https://www.reddit.com: false
+  content.register_protocol_handler:
+    https://outlook.office.com?mailtouri=%25s: false
+    https://outlook.office365.com?mailtouri=%25s: false
   url.start_pages:
     global: ~/home.html
   window.transparent:
