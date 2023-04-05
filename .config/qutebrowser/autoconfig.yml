@@ -9,10 +9,14 @@ settings:
   content.geolocation:
     https://www.ubereats.com: false
   content.notifications.enabled:
+    https://www.facebook.com: false
     https://www.reddit.com: false
   content.register_protocol_handler:
+    https://mail.google.com?extsrc=mailto&url=%25s: false
     https://outlook.office.com?mailtouri=%25s: false
     https://outlook.office365.com?mailtouri=%25s: false
+  url.default_page:
+    global: ~/home.html
   url.start_pages:
     global: ~/home.html
   window.transparent:

@@ -4,10 +4,10 @@
   <title>Home</title>
   <script>
     function startTime() {
-        var d=new Date();
-        var h=d.getHours();
-        var m=d.getMinutes();
-        var s=d.getSeconds();
+        var d = new Date();
+        var h = d.getHours();
+        var m = d.getMinutes();
+        var s = d.getSeconds();
         m = checkTime(m);
         s = checkTime(s);
         let session = "AM";
@@ -24,7 +24,7 @@
       //  m = (m < 10) ? "0" + m : m;
       //  s = (s < 10) ? "0" + s : s;
         
-        document.getElementById('clock').innerHTML = h+":"+m+":"+s+" "+session;
+        document.getElementById('clock').innerHTML = h + ":" + m + ":" + s + " " + session;
     }
 
     function checkTime(i) {
@@ -122,16 +122,24 @@
     <ul>
       <li>social</li>
       <li><a href="https://reddit.com/">reddit</a></li>
-      <li><a href="https://vk.com">vk</a></li>
-      <li><a href="https://frugal-biolab.github.io">frugal-biolab</a></li>
+      <li><a href="https://vk.com/">vk</a></li>
+      <li><a href="https://4chan.org">4chan</a></li>
+    </ul>
+
+    <ul>
+      <li>infrastructure</li>
+      <li><a href="http://physarum.cloudns.ph:6398/">cloud</a> | <a href="https://cutt.ly/J0Xrivz">filedrop</a></li>
+      <li><a href="http://physarum.cloudns.ph:5355/">jellyfin</a></li>
+      <li><a href="http://physarum.cloudns.ph:666/">jupyter</a></li>
+      <li>ssh @ 38252</li>
     </ul>
 
     <ul>
       <li>physical stuff</li>
-      <li><a href="https://amazon.com">amazon</a></li>
-      <li><a href="https://ebay.com/">ebay</a> | sell</li>
-      <li><a href="https://sfbay.craigslist.org/">craigslist</a> | post</li>
-      <li><a href="https://facebook.com/marketplace/">marketplace</a> | post</li>
+      <li><a href="https://amazon.com/">amazon</a></li>
+      <li><a href="https://ebay.com/">ebay</a></li>
+      <li><a href="https://sfbay.craigslist.org/">craigslist</a></li>
+      <li><a href="https://facebook.com/marketplace/">marketplace</a></li>
       <li><a href="https://offerup.com/">offerup</a></li>
     </ul>
   </nav>

@@ -308,14 +308,14 @@ myStartupHook = do
     -- launch notifications daemon
     spawnOnce "dunst &"
     -- connect to wifi
-    spawnOnce "iwctl station wlan0 connect \"21159Garden\" &"
-    spawnOnce "iwctl station wlan0 connect \"Treat Yo Self 2011_EXT\" &"
+    spawnOnce "iwctl station wlan0 connect \"Treat Yo Self 2011\" &"
     -- launch apps
     spawnOnce "telegram-desktop -startintray &"
-    spawnOnce "discord --start-minimized &"
+    -- spawnOnce "discord --start-minimized &" -- not using that one for now
     spawnOnce "slack -u &"
     -- faster browser launching
     spawnOnce "qutebrowser --nowindow &"
+    spawnOnce "nextcloud &"
 
 ------------------------------------------------------------------------
 -- Now run xmonad with all the defaults we set up.

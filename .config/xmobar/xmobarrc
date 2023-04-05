@@ -1,7 +1,8 @@
 Config { 
 
    -- appearance
-     font =         "xft:Hack:size=11:regular:antialias=true"
+   --  font =         "xft:Hack:size=11:regular:antialias=true"
+     font =         "Hack 11.3"
    , bgColor =      "black"
    , fgColor =      "#646464"
    , position =     Static { xpos = 0, ypos = 0, width = 1600, height = 25 }
