@@ -55,7 +55,7 @@ myModMask       = mod4Mask
 --
 -- > workspaces = ["web", "irc", "code" ] ++ map show [4..9]
 --
-myWorkspaces    = ["web","chat","sys","code","audio","b","u","n","k"]
+myWorkspaces    = ["web","mail","sys/dev","chat","audio","o","th","e","r"]
 
 -- Border colors for unfocused and focused windows, respectively.
 --
@@ -75,7 +75,7 @@ myKeys conf@(XConfig {XMonad.modMask = modm}) = M.fromList $
     , ((modm,               xK_space ), spawn "rofi -show run -terminal alacritty") -- was dmenu_run
 
     -- launch browser (qutebrowser)
-    , ((modm              , xK_b     ), spawn "qutebrowser")
+    , ((modm              , xK_b     ), spawn "chromium")
 
     -- launch file manager
     , ((modm,               xK_v     ), spawn "pcmanfm")
@@ -211,7 +211,7 @@ myMouseBindings (XConfig {XMonad.modMask = modm}) = M.fromList $
 -- The available layouts.  Note that each layout is separated by |||,
 -- which denotes layout choice.
 --
-myLayout = spacing 8 $ avoidStruts (tiled ||| Mirror tiled ||| Full)
+myLayout = spacingWithEdge 1 $ avoidStruts (tiled ||| Mirror tiled ||| Full)
   where
      -- default tiling algorithm partitions the screen into two panes
      tiled   = Tall nmaster delta ratio
@@ -254,12 +254,15 @@ myManageHook = composeAll
     , className =? "pinentry-gtk-2"  --> doFloat
     , className =? "splash"          --> doFloat
     , className =? "toolbar"         --> doFloat
+    , className =? "copyq"           --> doRectFloat (W.RationalRect 0.66 0.03 0.33 0.4)
     , resource  =? "kdesktop"       --> doIgnore
-    , title =? "qutebrowser"        --> doShift ( myWorkspaces !! 0)
-    , title =? "Discord"            --> doShift ( myWorkspaces !! 1) 
-    , title =? "Telegram"           --> doShift ( myWorkspaces !! 1) 
-    , title =? "Zoom"               --> doShift ( myWorkspaces !! 1)
-    , title =? "Spotify"            --> doShift ( myWorkspaces !! 4)
+    , title =? "qutebrowser"        --> doShift ( myWorkspaces !! 0 )
+    , title =? "Chromium"           --> doShift ( myWorkspaces !! 0 )
+    , title =? "Discord"            --> doShift ( myWorkspaces !! 3 ) 
+    , title =? "Telegram"           --> doShift ( myWorkspaces !! 3 ) 
+    , title =? "Zoom"               --> doShift ( myWorkspaces !! 3 )
+    , title =? "Spotify"            --> doShift ( myWorkspaces !! 4 )
+    , title =? "Thunderbird"        --> doShift ( myWorkspaces !! 1 )
     , className =? "fiji-Main"      --> doFloat
     ]
 

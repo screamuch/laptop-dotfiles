@@ -77,3 +77,12 @@ alias vim='nvim'
 # if wget eats shit...
 alias wget='wget -c'
 
+# esp32 dev environment
+alias get_idf=". $HOME/Repositories/esp-idf/export.fish"
+
+# gradle
+set -gx JAVA_HOME "/usr/lib/jvm/java-8-openjdk"
+set -gx PATH $JAVA_HOME/bin $PATH
+
+# custom scripts (VPN, etc)
+set -U fish_user_paths ~/bin $fish_user_paths

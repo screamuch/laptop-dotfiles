@@ -74,3 +74,6 @@ lua require'colorizer'.setup()
 
 " whichkey shortcut
 nnoremap <silent> <leader> :WhichKey '<Space>'<CR>
+
+" system clipboard
+set clipboard+=unnamedplus
