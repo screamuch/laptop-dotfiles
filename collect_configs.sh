@@ -93,3 +93,12 @@ cp ${HOME}/bin/wlan0_active.sh ${BASEDIR}/
 # wifimenu.sh script
 cp ${HOME}/.local/bin/wifimenu.sh ${BASEDIR}/
 
+# gsimplecal
+DIRECTORY=${BASEDIR}/.config/gsimplecal/
+if [ ! -d "$DIRECTORY" ]; then
+  mkdir ${DIRECTORY}
+fi
+if [ -e "${HOME}/.config/gsimplecal/config" ]; then
+  cp ${HOME}/.config/gsimplecal/config ${DIRECTORY}/config
+fi
+
