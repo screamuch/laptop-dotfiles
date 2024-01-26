@@ -13,7 +13,7 @@ Config {
    , sepChar =  "%"   -- delineator between plugin names and straight text
    , alignSep = "}{"  -- separator between left-right alignment
    -- , template = " %StdinReader% | %cpu% %multicoretemp% | %memory% | %battery% }{ %KSFO% | %date% || %kbd% " -- <-- multicoretemp broken
-   , template = " %StdinReader% | %cpu% | %memory% | %battery% }{ %KSFO% | %date% || %kbd% "
+   , template = " %StdinReader% | %cpu% | %memory% | %battery% }{ %KSFO% | %date% || %networkstatus% %kbd% "
 
 
    -- general behavior
@@ -81,21 +81,31 @@ Config {
                              ] 10
 
         -- battery monitor
-        , Run Battery        [ "--template" , "bat: <leftbar>"
-                             , "--Low"      , "10"        -- units: %
-                             , "--High"     , "30"        -- units: %
-                             , "--low"      , "darkred"
-                             , "--normal"   , "darkorange"
-                             , "--high"     , "darkgreen"
-
-                             , "--" -- battery specific options
-                                       -- discharging status
-                                       , "-o"	, "<left>% (<timeleft>)"
-                                       -- AC "on" status
-                                       , "-O"	, "<fc=#dAA520>Charging</fc>"
-                                       -- charged status
-                                       , "-i"	, "<fc=#006000>Charged</fc>"
-                             ] 50
+        , Run Battery          [ "--template" , "bat: <leftbar>"
+                               , "--Low"      , "10"        -- units: %
+                               , "--High"     , "30"        -- units: %
+                               , "--low"      , "darkred"
+                               , "--normal"   , "darkorange"
+                               , "--high"     , "darkgreen"
+          
+                               , "--" -- battery specific options
+                               -- discharging status
+                               , "-o"	, "<leftipat>"
+                               -- AC "on" status
+                               , "-O"	, "<fc=#009000><leftipat> Charging"
+                               -- charged status
+                               , "-i"	, "<fc=#006000>Charged</fc>"
+          
+                               , "--" 
+                               , "--lowt"     , "10"
+                               , "--hight"    , "30"
+                               , "--lows"     , "darkred"
+                               , "--normals"  , "darkorange"
+                               , "--highs"    , "darkgreen"
+                               , "--ipat"     , "#"
+                               ] 50
+        -- , Run Com "/home/chud/.local/bin/battery_level.sh" [] "battery_custom" 1
+        , Run Com "/home/chud/bin/wlan0_active.sh" [] "networkstatus" 1000
         -- workspaces, current window
         , Run StdinReader
 

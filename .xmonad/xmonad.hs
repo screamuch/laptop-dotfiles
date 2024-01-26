@@ -254,7 +254,7 @@ myManageHook = composeAll
     , className =? "pinentry-gtk-2"  --> doFloat
     , className =? "splash"          --> doFloat
     , className =? "toolbar"         --> doFloat
-    , className =? "copyq"           --> doRectFloat (W.RationalRect 0.66 0.03 0.33 0.4)
+    , className =? "copyq"           --> doFloat --doRectFloat (W.RationalRect 0.66 0.03 0.33 0.4)
     , resource  =? "kdesktop"       --> doIgnore
     , title =? "qutebrowser"        --> doShift ( myWorkspaces !! 0 )
     , title =? "Chromium"           --> doShift ( myWorkspaces !! 0 )
@@ -305,7 +305,7 @@ myStartupHook = do
     -- enable natural scrolling on touchpad
     spawnOnce "natural-scrolling &"
     -- launch trayer
-    spawnOnce "trayer --edge top --align right --widthtype pixels --width 100 --height 24 --tint 0x00000000 --margin 415 --transparent true --alpha 0 &"
+    spawnOnce "trayer --edge top --align right --widthtype pixels --width 100 --height 24 --tint 0x00000000 --margin 465 --transparent true --alpha 0 &"
     -- launch clipboard manager
     spawnOnce "copyq &"
     -- launch notifications daemon

@@ -87,3 +87,9 @@ cp -r ${HOME}/Pictures/wallpapers ${BASEDIR}/
 # homepage
 cp ${HOME}/home.html ${BASEDIR}/
 
+# wlan0_active.sh script
+cp ${HOME}/bin/wlan0_active.sh ${BASEDIR}/
+
+# wifimenu.sh script
+cp ${HOME}/.local/bin/wifimenu.sh ${BASEDIR}/
+
