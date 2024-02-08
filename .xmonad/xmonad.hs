@@ -264,6 +264,9 @@ myManageHook = composeAll
     , title =? "Spotify"            --> doShift ( myWorkspaces !! 4 )
     , title =? "Thunderbird"        --> doShift ( myWorkspaces !! 1 )
     , className =? "fiji-Main"      --> doFloat
+    , manageDocks  -- If you're using docks like xmobar
+    -- Append new windows to the bottom of the current stack
+    , doF W.swapDown
     ]
 
 ------------------------------------------------------------------------

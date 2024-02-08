@@ -41,7 +41,9 @@ Config {
    , commands = 
 
         -- weather monitor
-        [ Run Weather "KSFO" [ "--template", "<fc=#4682B4><tempF></fc>°F | <fc=#4682B4><rh></fc>%"
+        -- [ Run Weather "KSFO" [ "--template", "<fc=#4682B4><tempF></fc>°F | <fc=#4682B4><rh></fc>%"
+        [ Run Weather "KSFO" [ "--template", "<fc=#4682B4><tempF></fc>°F/<fc=#4682B4><rh></fc>%"
+
                              ] 36000
 
         -- network activity monitor (dynamic interface resolution)
@@ -111,7 +113,7 @@ Config {
 
         -- time and date indicator 
         --   (%F = y-m-d date, %a = day of week, %T = h:m:s time)
-        , Run Date           "<fc=#ABABAB>%F (%a) %T</fc>" "date" 10
+        , Run Date           "<fc=#ABABAB>%a %b %e, %Y %I:%M:%S%P</fc>" "date" 10
 
         -- keyboard layout indicator
         , Run Kbd            [ ("us(dvorak)" , "<fc=#00008B>DV</fc>")
